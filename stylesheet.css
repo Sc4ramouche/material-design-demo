@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  font-family: 'Roboto mono', monospace;
+  color: #212121;
+}
+
+.header {
+  background-color: #0097A7;
+  width: 100%;
+  color: #FFC107;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(187, 85, 85, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+h1, h3 {
+  margin: 0;
+  padding: 16px 24px;
+}
+
+h3 a {
+  color: inherit;
+  border-bottom: 1px solid #FFC107;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  border-bottom: none;
+}
+
+.inspired {
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 0px;
+  font-size: 17px;
+}
+
+.example {
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  background-color: rgb(216, 216, 216);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.principles {
+  padding-top: 64px;
+  padding-left: 8%;
+  padding-right: 8%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 128px;
+}
+
+.principles__item {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 600px;
+  grid-gap: 32px;
+}
+
+.principles__item:last-child {
+  margin-bottom: 64px;
+}
+
+.principles__message p {
+  text-align: right;
+  font-size: 20px;
+  margin: 0;
+}
+
+.instance {
+  height: 150px;
+  width: 150px;
+  background-color: #fff;
+  margin: 0 auto;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.transforming__instance {
+  animation-name: transforming;
+  animation-duration: 5s;
+}
+
+.grow__instance {
+  animation-name: grow;
+  animation-duration: 6s;
+}
+
+.generation__instance {
+  animation-name: generation;
+  animation-duration: 3s;
+}
+
+.principles__axis {
+}
+
+.axis__container {
+  position: absolute;
+  left: 160px;
+  bottom: 64px;
+  animation-name: axisX;
+  animation-duration: 3.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.axis__instance {
+  width: 120px;
+  height: 120px;  
+  animation-name: axisY;
+  animation-timing-function: ease-out;
+  animation-duration: 3.2s;
+}
+
+.interaction__instance:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@keyframes axisX {
+  20%, 50% {
+    transform: translateX(160px);
+  }
+  70%, 100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes axisY {
+  20%, 50% {
+    transform: translateY(-160px) rotate(90deg);
+  }
+  70%, 100% {
+    transform: translateY(0) rotate(180deg);
+  }
+}
+
+@keyframes transforming {
+  20%, 26% {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  44%, 50% {
+    height: 100px;
+    width: 100px;
+    border-radius: 12px;
+  }
+  70%, 100% {
+    height: 150px;
+    width: 150px;
+    border-radius: 0;
+  }
+}
+
+@keyframes grow {
+  16%, 20% {
+    width: 60px;
+    height: 60px;
+  }
+  36%, 40% {
+    width: 100px;
+    height: 60px;
+  }
+  56%, 60% {
+    width: 150px;
+    height: 60px; 
+  }
+  76%, 100% {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes generation {
+  15%, 50% {
+    height: 0px;
+    width: 0px;
+  }
+  65%, 100% {
+    height: 150px;
+    width: 150px
+  }
+}
+
+footer {
+  background-color: #0097A7;
+}
+
+footer h3 {
+  padding: 24px 24px;
+  color: #FFC107;
+  font-size: 17px;
+}
